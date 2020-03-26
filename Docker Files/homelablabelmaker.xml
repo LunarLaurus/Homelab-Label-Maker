@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>homelablabelmaker</Name>
+  <Repository>davidspek/homelablabelmaker</Repository>
+  <Registry>https://hub.docker.com/r/davidspek/homelablabelmaker/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/davidspek/homelablabelmaker/</Support>
+  <Project>https://github.com/BShurilla/homelablabelmaker</Project>
+  <Overview>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:2020</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/DavidSpek/homelablabelmaker/raw/master/Docker%20Files/Caddy%20Label%20Maker%20Logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1585250292</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2020</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI" Target="80" Default="2020" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">2020</Config>
+</Container>
