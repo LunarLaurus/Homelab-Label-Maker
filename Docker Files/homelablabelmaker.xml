@@ -11,7 +11,7 @@
   <Project>https://github.com/BShurilla/homelablabelmaker</Project>
   <Overview>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Overview>
   <Category>Tools: Other: Status:Stable</Category>
-  <WebUI>http://[IP]:2020</WebUI>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL/>
   <Icon>https://github.com/DavidSpek/homelablabelmaker/raw/master/Docker%20Files/Caddy%20Label%20Maker%20Logo.png</Icon>
   <ExtraParams/>
