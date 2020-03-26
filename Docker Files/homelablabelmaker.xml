@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://hub.docker.com/r/davidspek/homelablabelmaker/</Support>
+  <Support>https://forums.unraid.net/topic/90235-support-dell-and-hp-caddy-label-maker/</Support>
   <Project>https://github.com/BShurilla/homelablabelmaker</Project>
   <Overview>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Overview>
   <Category>Tools: Other: Status:Stable</Category>
@@ -17,7 +17,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1585250535</DateInstalled>
+  <DateInstalled>1585252520</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Description>
