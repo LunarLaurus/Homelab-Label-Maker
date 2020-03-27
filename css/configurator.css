@@ -67,6 +67,7 @@ div#mainContainer table td {
 }
 
 div#mainContainer table .hp,
+div#mainContainer table .sm,
 div#mainContainer table .dell,
 div#mainContainer table .dell2 {
   padding: 0px;
@@ -182,7 +183,7 @@ table#vendors img {
 }
 
 table#vendors td {
-  width: 50%;
+  width: 33%;
   text-align: center;
 }
 

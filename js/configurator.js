@@ -20,7 +20,7 @@ $( function() {
     { object: formFactorSelector, defaultField: 'SFF' },
     { object: genSelector, defaultField: 'gen5' }
   ];
-  
+
   createFormatTool();
   initApp();
   generateExample();
@@ -65,6 +65,16 @@ $( function() {
           disableSelectorOption(diskTypeSelector, s);
         });
       }
+      if (vendorType === 'sm') {
+        disableSelector(interfaceTypeSelector);
+        disableSelector(interfaceSpeedSelector);
+        disableSelector(diskSpeedSelector);
+        disableSelector(genSelector);
+        serial.attr('disabled',true).removeAttr('required').attr('placeholder','Not Applicable').val('');
+        ['SASMDL', 'SATAMDL', 'FC', 'SSNW'].forEach( function(s) {
+          disableSelectorOption(diskTypeSelector, s);
+        });
+      }
       $('#configuratorMain').modal('show');
       $('#configuratorMain').validator('validate');
     });
@@ -73,7 +83,7 @@ $( function() {
     $('#configuratorMain').on('hidden.bs.modal', function () {
       resetConfigurator();
     });
-    
+
     $('#gen label').on('change', function (){
       var gen = $('#gen input:radio:checked').parent().text().trim();
 
@@ -88,7 +98,7 @@ $( function() {
         });
       } else { 
           console.info ('Gen' + gen + ' is selected enable disabled options');
-          if (vendorType !== 'dell') {
+          if (vendorType !== 'dell' && vendorType !== 'sm') {
               ['SASMDL', 'SATAMDL', 'FC', 'SSNW'].forEach( function(s) {
                 enableSelectorOption(diskTypeSelector, s);
               });
@@ -112,14 +122,14 @@ $( function() {
       if (/SSD/gi.test(diskType)) {
         console.info ('SSD is selected disable the disk speed option.');
         disableSelector(diskSpeedSelector);
-      } else if (isSelectorDisabled(diskSpeedSelector)) {
+      } else if (isSelectorDisabled(diskSpeedSelector) && vendorType !== 'sm' ) {
         enableSelector(diskSpeedSelector);
       }
 
       if (/SAS/gi.test(diskType)) {
         console.info ('SAS Disk selected disable the 1.5 Gbps speed option.');
         disableSelectorOption(interfaceSpeedSelector, 'SATA1');
-      } else if ( isSelectorOptionDisabled(interfaceSpeedSelector, 'SATA1') && vendorType !== 'dell' ) {
+      } else if ( isSelectorOptionDisabled(interfaceSpeedSelector, 'SATA1') && vendorType !== 'dell' && vendorType !== 'sm' ) {
         enableSelectorOption(interfaceSpeedSelector, 'SATA1');
       }
 
@@ -127,7 +137,7 @@ $( function() {
         console.info ('SATA Disk selected disable controller speeds faster than SATAIII.');
         disableSelectorOption(interfaceSpeedSelector, 'SAS3');
         disableSelectorOption(interfaceSpeedSelector, 'SAS4');
-      } else if ( ( isSelectorOptionDisabled(interfaceSpeedSelector, 'SAS3') || isSelectorOptionDisabled(interfaceSpeedSelector, 'SAS4') ) && vendorType !== 'dell') {
+      } else if ( ( isSelectorOptionDisabled(interfaceSpeedSelector, 'SAS3') || isSelectorOptionDisabled(interfaceSpeedSelector, 'SAS4') ) && vendorType !== 'dell' && vendorType !== 'sm') {
         enableSelectorOption(interfaceSpeedSelector, 'SAS3');
         enableSelectorOption(interfaceSpeedSelector, 'SAS4');
       }
@@ -138,7 +148,7 @@ $( function() {
     diskSpeedObj = obj.find('.speed');
     diskTypeObj  = obj.find('.interface');
     labelDivider = obj.find('.divider');
-    
+
     if (gen == "gen5" ) {
         console.info ('HP gen 5/6/7 label colours');
         switch (true) {
@@ -164,14 +174,15 @@ $( function() {
 
       diskSpeedObj.addClass('nonDP');
     }
-    
-    if (/SSD/.test(type) && vendorType !== 'dell') { diskTypeObj.text(String.fromCharCode(160)); }
+
+    if (/SSD/.test(type) && vendorType !== 'dell' && vendorType !== 'sm') { diskTypeObj.text(String.fromCharCode(160)); }
 
   }
 
   function addUser(e, formFactor, interfaceType, interfaceSpeed, diskSpeed, diskType, diskCapacity, diskSerial, targetTable, targetNumber, gen ) {
     diskSpeedLabel = '';
     diskSpeedDell  = '';
+    diskSpeedSM    = '';
 
     formFactor      = formFactor      === undefined ? $('#formFactor label.active').attr('for')     : formFactor;
     interfaceType   = interfaceType   === undefined ? $('#interfaceType label.active').attr('for')  : interfaceType;
@@ -219,6 +230,7 @@ $( function() {
     if (diskSpeed) {
       diskSpeedLabel = diskSpeedLabel.concat(diskSpeed);
       diskSpeedDell  = diskSpeedDell.concat(diskSpeed);
+      diskSpeedSM  = diskSpeedSM.concat(diskSpeed);
     }
 
     if (/(SSD|SSNW)/i.test(diskType)) {
@@ -234,7 +246,7 @@ $( function() {
     var valid = true;
 
     switch (vendorType) {
-      case 'hp': 
+      case 'hp':
         console.info ('Disk Speed HP Label : ' + diskSpeedLabel);
         switch (gen) {
           case 'gen5':
@@ -246,8 +258,8 @@ $( function() {
               case 'LFF':
                 labelString = "<div class='hp LFF'><div class='speed'>{0}</div><div class='interface'>{1}</div><hr class='divider'/><div class='capacity'>{2}</div><div class='serial'>{3}</div></div>".format(diskSpeedLabel,diskType,diskCapacity,diskSerial);
                 break;
-            }
-            break;
+          }
+          break;
           case 'gen8':
             console.info ('HP: gen 8/9 label');
             switch (formFactor) {
@@ -257,10 +269,10 @@ $( function() {
               case 'LFF':
                 labelString ="<div class='hpGen8 LFF'><div class='speed'>{0}</div><div class='divider'></div><div class='interface'>{1}</div><div class='capacity'>{2}</div><div class='divider'></div><div class='serial'>{3}</div></div>".format(diskSpeedLabel,diskType,diskCapacity,diskSerial); 
                 break;
-            }
-            break;            
+          }
+          break;
         }
-        break;
+      break;
       case 'dell':
         console.info ('Disk Speed Dell Label : ' + diskSpeedDell);
         switch (formFactor) {
@@ -269,10 +281,22 @@ $( function() {
             break;
           case 'LFF':
             labelString = "<div class='dell LFF'><div class='interface'>{0}</div><div class='capacity'>{1}</div><div class='speed'>{2}</div></div>".format(diskType,diskCapacity,diskSpeedDell);
+            break;
+	  }
+      break;
+      case 'sm':
+        console.info ('Disk Speed SM Label : ' + diskSpeedSM);
+        switch (formFactor) {
+          case 'SFF':
+            labelString = "<div class='sm SFF'><div class='interface'>{0}</div><div class='interface'>{1}</div></div>".format(diskType,diskCapacity);
           break;
-      }
+          case 'LFF':
+            labelString = "<div class='sm LFF'><div class='interface'>{0} | {1}</div></div>".format(diskType,diskCapacity);
+          break;
+        }
+      break;
     }
-     
+
     if (($('#' + targetTable + ' tr').length === 0) || $('#' + targetTable + ' tr:last td').length >= targetNumber) { $( '#' + targetTable + ' tbody' ).append( '<tr>' ); }
     $( '#' + targetTable + ' tbody tr:last' ).append('<td>' + labelString + '</td>');
     if (($('#' + targetTable + 'tr').length === 0) || $('#' + targetTable + ' tr:last td').length >= targetNumber) { $( '#' + targetTable + ' tbody' ).append( '</tr>' ); }
@@ -457,6 +481,30 @@ $( function() {
           {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: 'SSD', diskType: 'SATA', diskCapacity: '480 GB', diskSerial: ''},
           {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SSD', diskCapacity: '1 TB', diskSerial: ''},
         ]
+      },
+      smSFF: {
+        title: 'Supermicro 2.5" (SFF)',
+        vendorType: 'sm',
+        fields: [
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SAS', diskCapacity: '512 GB', diskSerial: ''},
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SAS', diskCapacity: '1 TB', diskSerial: ''},
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '2 TB', diskSerial: ''},
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '3 TB', diskSerial: ''},
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '4 TB', diskSerial: ''},
+          {formFactor: 'SFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SSD', diskCapacity: '512 GB', diskSerial: ''},
+        ]
+      },
+      smLFF: {
+        title: 'Supermicro 3.5" (LFF)',
+        vendorType: 'sm',
+        fields: [
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SAS', diskCapacity: '1 TB', diskSerial: ''},
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SAS', diskCapacity: '2 TB', diskSerial: ''},
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '4 TB', diskSerial: ''},
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '8 TB', diskSerial: ''},
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SATA', diskCapacity: '480 GB', diskSerial: ''},
+          {formFactor: 'LFF', interfaceType: '', interfaceSpeed: '', diskSpeed: '', diskType: 'SSD', diskCapacity: '1 TB', diskSerial: ''},
+        ]
       }
     };
 
@@ -483,7 +531,7 @@ $( function() {
     if (!String.prototype.format) {
       String.prototype.format = function() {
         var args = arguments;
-        return this.replace(/{(\d+)}/g, function(match, number) { 
+        return this.replace(/{(\d+)}/g, function(match, number) {
           return typeof args[number] != 'undefined'
           ? args[number]
           : match

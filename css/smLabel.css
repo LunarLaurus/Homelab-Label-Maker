@@ -1,0 +1,33 @@
+/* Supermicro Label Styling */
+
+div.sm {
+  display: inline-block;
+}
+
+div.sm.SFF {
+  width: 1.3cm;
+  height: 0.4cm;
+  background: #E0E0E0;
+}
+
+div.sm.LFF {
+  width: 2.8cm;
+  height: 0.5cm;
+  background: #E0E0E0;
+}
+
+div.sm div.interface {
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+div.sm.LFF div.interface {
+  font-size: 14px;
+}
+
+div.sm.SFF div.interface {
+  font-size: 7px;
+}
