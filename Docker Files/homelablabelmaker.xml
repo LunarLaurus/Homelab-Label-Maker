@@ -20,7 +20,7 @@
   <DateInstalled>1585252520</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>DIY tool to create and print labels for Dell Poweredge and HP Proliant drive caddies.</Description>
+  <Description>DIY tool to create and print labels for Dell Poweredge, HP Proliant and SuperMicro drive caddies.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
