@@ -10,4 +10,4 @@ Updated with HP Gen 8/9 labels.
 
 **NEW** Updated with Supermicro labels.
 
-Visit https://homelablabelmaker.shurilla14.com/ for a live view.
+Visit https://homelablabelmaker.shurilla14.com/ for a live view (No supermicro labels).
