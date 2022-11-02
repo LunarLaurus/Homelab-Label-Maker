@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+   caddylabel:
+      user: "root"
+      image: httpd:alpine
+      restart: always
+      ports:
+         - 4080:80
+      volumes:
+         - /data/caddylabel:/usr/local/apache2/htdocs
