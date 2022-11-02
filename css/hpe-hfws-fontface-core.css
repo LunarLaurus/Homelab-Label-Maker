@@ -1,0 +1,109 @@
+/* Original fonts used by first version 4 HFWS - TODO: 1. migrate to use new binaries from hpe.com template 2. css/js files to new names as in AEM/hpe.com template 3. check and remove below lines */
+@font-face{font-family:MetricReg;src:url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Regular.woff) format("woff")}
+@font-face{font-family:MetricBold;src:url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Bold.woff) format("woff");font-weight:700}
+@font-face{font-family:MetricSemibold;src:url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Semibold.woff) format("woff");font-weight:600}
+@font-face{font-family:MetricLight;src:url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Light.woff) format("woff");font-weight:100}
+
+/* Japanese custom font: */
+@font-face{font-family:AxisProN-Regular;src:url(https://h50007.www5.hpe.com/hfws-static/fonts/axispro/AxisProN-Regular.woff2) format('woff2');font-weight:400;}
+/* Russian custom font: */
+@font-face{font-family:'Arial Narrow';src:local('Arial Narrow'),url(https://h50007.www5.hpe.com/hfws-static/fonts/arial-narrow/ArialNarrow.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/arial-narrow/ArialNarrow.woff) format('woff');font-weight:400;font-style:normal;font-stretch:condensed;}
+@font-face{font-family:'Arial Narrow Bold';src:local('Arial Narrow Bold'),local('ArialNarrow-Bold'),url(https://h50007.www5.hpe.com/hfws-static/fonts/arial-narrow/ArialNarrow-Bold.woff2) format('woff2'),url(https://h50007.www5.hpe.com/hfws-static/fonts/arial-narrow/ArialNarrow-Bold.woff) format('woff');font-weight:700;font-style:normal;font-stretch:condensed}
+/* Korean  custom font: */
+@font-face{font-family:'YDGothic-120 Pro';src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-120Pro.eot);src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-120Pro.woff) format('woff')}
+@font-face{font-family:'YDGothic-140 Pro';src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-140Pro.eot);src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-140Pro.woff) format('woff')}
+@font-face{font-family:'YDGothic-140 Pro';src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-160Pro.eot);src:url(https://h50007.www5.hpe.com/hfws-static/fonts/yd-gothic/YDGothic-160Pro.woff) format('woff')}
+
+/* Fonts for hpe.com template */
+@font-face {
+    font-family: 'Metric Light';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Light.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Light.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'Metric Regular';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Regular.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'Metric Medium';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Medium.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Medium.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'Metric Semibold';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Semibold.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Semibold.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'MetricHPE Black';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Black.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/MetricHPE-Web-Black.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'Simple Light';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-light.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-light.woff) format('woff'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-light.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'Simple Regular';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-regular.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-regular.woff) format('woff'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-regular.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'Simple Bold';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-bold.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-bold.woff) format('woff'), url(https://h50007.www5.hpe.com/hfws-static/fonts/simple-hpe/lineto-simple-pro-bold.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: hpe-glyphicons;
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/glyphicons-hpe/hpe-glyphicons.woff2) format("woff2"), url(https://h50007.www5.hpe.com/hfws-static/fonts/glyphicons-hpe/hpe-glyphicons.woff) format("woff"), url(https://h50007.www5.hpe.com/hfws-static/fonts/glyphicons-hpe/hpe-glyphicons.ttf) format("truetype"), url(https://h50007.www5.hpe.com/hfws-static/fonts/glyphicons-hpe/hpe-glyphicons.svg#hpe-glyphicons) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+/* Definitions of legacy CaaS font names to provide backwards compatibility for pages using them. Those font names use the same binaries as above */
+@font-face {
+    font-family: 'HPEMetricRegular';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Regular.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Regular.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'HPEMetricLight';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Light.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Light.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+
+@font-face {
+    font-family: 'HPEMetricSemiBold';
+    src: url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Semibold.woff2) format('woff2'), url(https://h50007.www5.hpe.com/hfws-static/fonts/metric-hpe/Metric-Semibold.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}

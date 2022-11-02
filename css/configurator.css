@@ -7,7 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 80px;
-  font-family: Lato, arial, sans-serif;
+  font-family: Metric;
   font-size: 10pt;
   line-height: 1.2 !important;
 }
@@ -169,7 +169,7 @@ div#mainContainer table .dell2 {
   top: 0;
   left: 0;
   color: white;
-  font-family: Lato, arial, sans-serif;
+  font-family: Metric;
   font-size: 42px;
   text-align: center;
 }

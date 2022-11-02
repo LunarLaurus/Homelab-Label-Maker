@@ -28,7 +28,7 @@ div.hpGen8 .speed {
   margin-bottom: 0;
   text-align: center;  
   color: white;
-  font-family: Arial, ' Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'HPEMetricSemiBold';
 }
 
 div.hpGen8 .interface {
@@ -37,7 +37,7 @@ div.hpGen8 .interface {
   margin-top: 2%;
   margin-bottom: -6%;
   color: white;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'MetricHPE Black';
   font-size: 10px;
   font-weight: bold;
 }
@@ -48,7 +48,7 @@ div.hpGen8 .capacity {
   margin-top: -6%;
   margin-bottom: 0;
   color: white;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'HPEMetricSemiBold';
 }
 
 div.hpGen8 .serial {
@@ -57,7 +57,7 @@ div.hpGen8 .serial {
   margin-top: 3%;
   text-align: left;
   color: white;
-  font-family: Arial, ' Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'HPEMetricSemiBold';
 }
 
 div.hpGen8 .divider {
