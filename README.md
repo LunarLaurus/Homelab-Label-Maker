@@ -1,13 +1,30 @@
-# homelablabelmaker
-DIY tool to create and print labels for drive caddies
 
+# Homelab Label Maker
 
-This is a tiny tool to create custom labels for drive caddies.
+This is a tiny tool to create custom labels for drive caddies.  
+  
+# Usage
 
-Works with Dell Poweredge Gen11 and Hp Proliant G5, 6, 7, 8 and 9 drive caddies.
+[Preview available here](https://lunarlaurus.github.io/homelablabelmaker/).
 
-Updated with HP Gen 8/9 labels.
+# Supported Vendors
 
-**NEW** Updated with Supermicro labels.
+Below is a list of the currently supported vendors.
 
-Visit https://homelablabelmaker.shurilla14.com/ for a live view (No supermicro labels).
+## Dell
+
+Poweredge Gen 11
+
+## HP/HPE
+
+Proliant Gen 5
+
+Proliant Gen 6
+
+Proliant Gen 7
+
+Proliant Gen 8
+
+Proliant Gen 9
+
+## SuperMicro
