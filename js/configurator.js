@@ -403,6 +403,14 @@ $( function() {
     $( '#btnRestartApp' ).hide();
     $( '#topContainer' ).hide();
     $( 'footer' ).hide();
+    setTimeout(function() {      
+      $( '#btnPrintPage' ).show();
+      $( '#btnStartConfigurator' ).show();
+      $( '#instruction' ).show();
+      $( '#btnRestartApp' ).show();
+      $( '#topContainer' ).show();
+      $( 'footer' ).show();
+    },100);
   }
 
   function generateExample() {
