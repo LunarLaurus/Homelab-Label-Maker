@@ -18,7 +18,7 @@ $( function() {
     { object: interfaceTypeSelector, defaultField: 'singlePort' },
     { object: interfaceSpeedSelector, defaultField: 'SATA2/SAS' },
     { object: formFactorSelector, defaultField: 'SFF' },
-    { object: genSelector, defaultField: 'gen5' }
+    { object: genSelector, defaultField: 'gen8' }
   ];
 
   createFormatTool();
@@ -403,9 +403,6 @@ $( function() {
     $( '#btnRestartApp' ).hide();
     $( '#topContainer' ).hide();
     $( 'footer' ).hide();
-    setTimeout(function() {
-      $( '#btnRestartApp').show().click();
-    },100);
   }
 
   function generateExample() {
