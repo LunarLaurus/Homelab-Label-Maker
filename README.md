@@ -4,8 +4,7 @@
 This is a tiny tool to create custom labels for drive caddies.  
   
 # Usage
-
-[Preview available here](https://lunarlaurus.github.io/homelablabelmaker/).
+[Preview available here](https://lunarlaurus.github.io/Homelab-Label-Maker/).
 
 # Supported Vendors
 
